@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <title>walcome to apply</title>
+        <link rel="stylesheet" href="css/bootstrap.css" />
+        <script src="js/bootstrap.js"></script>
+        <style>
+            :root {
+                scroll-behavior: smooth;
+            }
+
+            body {
+                font-family: "Open Sans", sans-serif;
+                background: #f6f9ff;
+                color: #444444;
+            }
+
+            a {
+                color: #4154f1;
+                text-decoration: none;
+            }
+
+            a:hover {
+                color: #717ff5;
+                text-decoration: none;
+            }
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                font-family: "Nunito", sans-serif;
+            }
+
+            #main {
+                margin-top: 60px;
+                padding: 20px 30px;
+                transition: all 0.3s;
+            }
+
+            @media (max-width: 1199px) {
+                #main {
+                    padding: 20px;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <main>
+            <div class="container">
+                <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
+                                <div class="d-flex justify-content-center py-4"></div>
+                                <!-- End Logo -->
+
+                                <div class="card mb-3">
+                                    <div class="card-body">
+                                        <div class="pt-4 pb-2">
+                                            <h5 class="card-title text-center pb-0 fs-4">Walcome to apply</h5>
+                                            <p class="text-center small">Enter your personal details</p>
+                                        </div>
+
+                                        <form action="register.php" method="post" class="row g-3 needs-validation" novalidate>
+                                            <div class="col-12">
+                                               
+                                                <select name="course" class="form-control" id="course" required>
+                                                    <option value="">Select Course</option>
+                                                    <option value="Digital Marketing">Digital Marketing</option>
+                                                    <option value="Web Design">Web Design</option>
+                                                    <option value="Graphics Design">Graphics Design</option>
+                                                </select>
+                                                <div class="invalid-feedback">Please select a Corese</div>
+                                            </div>
+
+                                            <div class="col-12">
+                                                <input type="text" name="name" class="form-control" id="name" required placeholder="Full Name"/>
+                                                <div class="invalid-feedback">Please, enter your name!</div>
+                                            </div>
+
+                                            <div class="col-12">
+                                            
+                                                <input type="email" name="email" class="form-control" id="email"  placeholder="Email"/>
+                                                <div class="invalid-feedback">Please enter a valid Email adddress!</div>
+                                            </div>
+
+                                            <div class="col-12">
+                                                
+                                                <input type="text" name="phone" class="form-control" id="phone" required placeholder=" Phone Nomber"/>
+                                                <div class="invalid-feedback">Please enter a valid Phone Number!</div>
+                                            </div>
+                                            
+                                            
+                                            <div class="col-12">
+                                                
+                                                <select name="gender" class="form-control" id="gender" required>
+                                                    <option value="">Select Gender</option>
+                                                    <option value="Male">Male</option>
+                                                    <option value="Femele">Femele</option>
+                                                    <option value="Other">Other</option>
+                                                </select>
+                                                <div class="invalid-feedback">Please select Gender</div>
+                                            </div>
+
+                                            <div class="col-12">
+                                                
+                                                <input type="text" name="age" class="form-control" id="age" required placeholder=" Your Age"/>
+                                                <div class="invalid-feedback">Please write your Age!</div>
+                                            </div>
+
+                                            
+                                              <div class="col-12">
+                                              
+                                              <input type="text" name="profession" class="form-control" id="profession" required placeholder=" Your Profession">
+                                              <div class="invalid-feedback">Please write your Profession!</div>
+                                              </div>
+                                              
+                                            <div class="col-12">
+                                                
+                                                <input type="text" name="qualification" class="form-control" id="qualification" required placeholder=" Your Lsat Qualification"/>
+                                                <div class="invalid-feedback">Please write your Qualification!</div>
+                                            </div>
+                                            
+                                            <div class="col-12">
+                                              
+                                              <input type="text" name="location" class="form-control" id="location" required placeholder="Full Location">
+                                              <div class="invalid-feedback">Please write your Location!</div>
+                                              </div>
+
+                                              <div class="col-12">
+                                                <textarea name="experience" class="form-control" id="experience" maxlength="300" placeholder="Experience (maximum 300 words)"></textarea>
+                                                <div class="invalid-feedback">Please write your experience!</div>
+                                            </div>
+                                            
+                                            
+                                            <div class="col-12">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" name="terms" type="checkbox" value="" id="acceptTerms" required />
+                                                    <label class="form-check-label" for="acceptTerms">I agree and accept the <a href="#">terms and conditions</a></label>
+                                                    <div class="invalid-feedback">You must agree before submit.</div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <button class="btn btn-primary w-100" type="submit" name="submit" value="Submit">Submit</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+        <!-- End -->
+        <!--  JS Files -->
+        <script>
+            // Wait for the DOM to be loaded
+            document.addEventListener("DOMContentLoaded", function () {
+                // Get the form element
+                const form = document.querySelector("form.needs-validation");
+
+                // Add an event listener for form submission
+                form.addEventListener("submit", function (event) {
+                    // Check if the form is valid
+                    if (!form.checkValidity()) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+
+                    // Add Bootstrap's validation classes to the form elements
+                    form.classList.add("was-validated");
+                });
+            });
+
+            
+        </script>
+    </body>
+</html>
+
+
